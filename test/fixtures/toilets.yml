@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  location: MyString
-  cleanliness: MyString
+  name: MyString
   price: MyString
+  cleanliness: MyString
+  user_id: 
 
 two:
-  location: MyString
-  cleanliness: MyString
+  name: MyString
   price: MyString
+  cleanliness: MyString
+  user_id: 
