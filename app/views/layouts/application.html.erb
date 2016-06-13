@@ -8,6 +8,21 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+          <%= submit_tag "Search" %>
+          <% end %>
+
+          </a>
+        </div>
+      </div>
+    </nav>
+
+
+
 <%= yield %>
 
 </body>
