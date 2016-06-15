@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'users#index'
   resources :users
+  resources :toilets
+  resources :visits
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
