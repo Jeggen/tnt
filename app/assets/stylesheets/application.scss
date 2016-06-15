@@ -1,0 +1,21 @@
+img.small-cover {
+    width: 200px;
+    height: 300px;
+}
+
+div.inline {
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+div.toilet-item {
+   margin-top: 14px;
+
+   .cover {
+      margin-right: 10px;
+   }
+
+   .details {
+      width: 400px;
+   }
+}

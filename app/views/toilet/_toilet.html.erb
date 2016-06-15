@@ -1,0 +1,17 @@
+<div class="toilet-item">
+
+   <div class="inline cover">
+      <img class="small-cover" src="<%= toilet.cover %>"/>
+   </div>
+
+   <div class="inline details">
+
+      <h3><%= link_to toilet.name, toilet %></h3>
+      <h4><%= link_to toilet.user.name, toilet.user %></h4>
+
+      <p><%= toilet.cleanliness %></p>
+      <p><%= toilet.price %></p>
+
+   </div>
+
+</div>
