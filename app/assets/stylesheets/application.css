@@ -13,9 +13,16 @@
  *= require_tree .
  *= require_self
  */
- body{
-   background-color:#C2DFFF;
+
+ body {
+   background-image: url("https://boldquestions.files.wordpress.com/2016/01/street-toilet.jpg");
+   background-size: cover;
+   background-position: center;
+   background-color: #C2DFFF;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
  }
+
 .vertical-center {
    margin: 0px 100px;
  }
