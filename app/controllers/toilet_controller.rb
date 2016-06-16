@@ -1,15 +1,4 @@
 class ToiletController < ApplicationController
-  def title:string
-  end
-
-  def price:integer
-  end
-
-  def cover:string
-  end
-
-  def cleanliness:string
-  end
 
   def index
     @toilets = Toilet.all.sort_by { |toilet| toilet.name }
