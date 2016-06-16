@@ -1,6 +1,6 @@
 class Toilet < ActiveRecord::Base
   belongs_to :user
-  has_many :bookings
+  has_many :visits
 
   def self.search(search)
     if search
