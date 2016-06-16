@@ -24,20 +24,48 @@
     font-size:300%;
  }
  body{
-   background-color:#ddd;
+   background-image: url("https://boldquestions.files.wordpress.com/2016/01/street-toilet.jpg");
+   background-size: cover;
+   background-position: center;
+   background-color: #C2DFFF;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
  }
+
 .vertical-center {
    margin: 0px 100px;
- }
+}
 nav {
   padding: 0px 100px;
 }
+
 .navbar-brands{
   color:red;
 }
 
-
 .picture{
   width: 500px;
   height:400px;
+}
+
+img.small-cover {
+    width: 200px;
+    height: 300px;
+}
+
+div.inline {
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+div.toilet-item {
+   margin-top: 14px;
+}
+
+.cover {
+  margin-right: 10px;
+}
+
+.details {
+  width: 400px;
 }
