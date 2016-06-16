@@ -11,18 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613095143) do
+ActiveRecord::Schema.define(version: 20160615194220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "toilets", force: :cascade do |t|
-    t.string   "location"
+    t.integer  "user_id"
+    t.string   "name"
+    t.decimal  "price"
+    t.string   "cover"
     t.string   "cleanliness"
-    t.string   "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "toilets", ["user_id"], name: "index_toilets_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -32,4 +36,19 @@ ActiveRecord::Schema.define(version: 20160613095143) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "visits", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "toilet_id"
+    t.integer  "stars"
+    t.string   "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "visits", ["toilet_id"], name: "index_visits_on_toilet_id", using: :btree
+  add_index "visits", ["user_id"], name: "index_visits_on_user_id", using: :btree
+
+  add_foreign_key "toilets", "users"
+  add_foreign_key "visits", "toilets"
+  add_foreign_key "visits", "users"
 end
