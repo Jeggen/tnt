@@ -22,3 +22,53 @@
 nav {
   padding: 0px 100px;
 }
+
+
+body {
+  background-image: url("https://boldquestions.files.wordpress.com/2016/01/street-toilet.jpg");
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: #C2DFFF;
+}
+
+img.small-cover {
+    width: 200px;
+    height: 300px;
+}
+
+div.inline {
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+div.toilet-item {
+   margin-top: 14px;
+
+   .cover {
+      margin-right: 10px;
+   }
+
+   .details {
+      width: 400px;
+   }
+}
+
+.form-signin {
+  position: center;
+  float: left;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-left: 250px;
+  border: 10px;
+  border-color: black;
+}
+
+.form-register {
+  position: center;
+  clear: right;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
