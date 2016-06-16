@@ -20,9 +20,6 @@ users =[
 ]
 
 
-users.each do | name, email |
-   User.create( name: name, email: email )
-end
 
 
 user_toilets = {}
@@ -58,11 +55,6 @@ user_toilets["David"] = [
   [ "Dare to sit", 3.92, "http://kulr.images.worldnow.com/images/7993134_G.jpg", "Clean" ],
 ]
 
-user_toilets.each do | user_name, toilets |
-   user = User.find_by( name: user_name )
-
-   toilets.each do | name, price, cover, cleanliness |
-    toilet =  Toilet.create( name: name, user_id: user.id, price: price, cover: cover, cleanliness: cleanliness )
 
 user_wcs = {}
 user_wcs["Santa"] = [
@@ -97,15 +89,13 @@ user_wcs["David"] = [
   [ "Dare to sit", 3.92, "http://kulr.images.worldnow.com/images/7993134_G.jpg", "Clean" ]
 ]
 
-users.each do | name, email |
-   User.create( name: name, email: email )
+
+user_toilets.each do | user_name, toilets |
+  user = User.find_by( name: user_name )
 end
-
-user_wcs.each do | user_name, wcs |
-   user = User.find_by( name: user_name )
-
-   wcs.each do | name, price, cover, cleanliness |
-      Toilet.create( name:name, user_id: user.id, price: price, cover: cover, cleanliness: cleanliness )
-
-   end
+  toilets.each do | name, price, cover, cleanliness |
+    toilet =  Toilet.create( name: name, user_id: user.id, price: price, cover: cover, cleanliness: cleanliness )
 end
+    users.each do | name, email |
+       User.create( name: name, email: email )
+      end
