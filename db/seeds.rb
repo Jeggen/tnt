@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 
-User.create({ name: "Santa", email: "santa@hotmail.com", password: "reindeer"})
+
 
 Toilet.create({ name: "Regular", price: "5.20", cleanliness: "Pretty clean" })
 Toilet.create({ name: "Little comfort", price: "3.50", cleanliness: "Not very clean" })
@@ -9,19 +8,8 @@ Toilet.create({ name: "The Golden Throne", price: "13.21", cleanliness: "Extreme
 Toilet.create({ name: "Hold your breath", price: "1.93", cleanliness: "Dirty" })
 
 
-=======
-<<<<<<< HEAD
-=======
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
->>>>>>> jake
 
->>>>>>> e2b88248311be93d2a43d58ad0b82c701c719255
+
 users =[
   [ "Santa", "santa@hotmail.com"],
   [ "Jane", "janeB@gmail.net"],
@@ -31,7 +19,7 @@ users =[
   [ "David", "david@hotmail.net"]
 ]
 
-<<<<<<< HEAD
+
 users.each do | name, email |
    User.create( name: name, email: email )
 end
@@ -75,7 +63,7 @@ user_toilets.each do | user_name, toilets |
 
    toilets.each do | name, price, cover, cleanliness |
     toilet =  Toilet.create( name: name, user_id: user.id, price: price, cover: cover, cleanliness: cleanliness )
-=======
+
 user_wcs = {}
 user_wcs["Santa"] = [
   [ "Regular", 5.20, "http://www.elwarditechnology.com/wp-content/uploads/2016/01/toilet.jpg", "Pretty clean" ],
@@ -118,6 +106,6 @@ user_wcs.each do | user_name, wcs |
 
    wcs.each do | name, price, cover, cleanliness |
       Toilet.create( name:name, user_id: user.id, price: price, cover: cover, cleanliness: cleanliness )
->>>>>>> e2b88248311be93d2a43d58ad0b82c701c719255
+
    end
 end
