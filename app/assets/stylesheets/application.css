@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
  body {
    background-image: url("https://boldquestions.files.wordpress.com/2016/01/street-toilet.jpg");
    background-size: cover;
@@ -30,7 +31,6 @@ nav {
   padding: 0px 100px;
 }
 
-
 img.small-cover {
     width: 200px;
     height: 300px;
@@ -43,12 +43,12 @@ div.inline {
 
 div.toilet-item {
    margin-top: 14px;
+}
 
-   .cover {
-      margin-right: 10px;
-   }
+.cover {
+  margin-right: 10px;
+}
 
-   .details {
-      width: 400px;
-   }
+.details {
+  width: 400px;
 }
