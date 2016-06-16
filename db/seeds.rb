@@ -48,6 +48,11 @@ user_wcs["David"] = [
   [ "Dare to sit", 3.92, "http://kulr.images.worldnow.com/images/7993134_G.jpg", "Clean" ]
 ]
 
+wc_visits = [
+  ["Paddy", "Dont touch anything", 2, "It smelled bad" ],
+  ["Jane", "Glass seat", 4, "Fanstastic" ]
+]
+
 users.each do | name, email |
    User.create( name: name, email: email )
 end
@@ -58,4 +63,10 @@ user_wcs.each do | user_name, wcs |
    wcs.each do | name, price, cover, cleanliness |
       Toilet.create( name:name, user_id: user.id, price: price, cover: cover, cleanliness: cleanliness )
    end
+end
+
+wc_visits.each do | user_name, toilet_name, stars, comment |
+   user = User.find_by( name: user_name )
+   toilet = Toilet.find_by( name: toilet_name )
+   Visit.create( toilet_id: toilet.id, user_id: user.id, stars: stars, comment: comment )
 end
