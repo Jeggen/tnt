@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  toilet_id: 
   user_id: 
+  toilet_id: 
+  stars: 1
+  comment: MyString
 
 two:
-  toilet_id: 
   user_id: 
+  toilet_id: 
+  stars: 1
+  comment: MyString

@@ -19,42 +19,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-
-      <div class="site-wrapper">
-
-        <div class="site-wrapper-inner">
-
-          <div class="cover-container">
-
-            <div class="masthead clearfix">
-              <div class="inner">
-                <h3 class="masthead-brand">AirTnT</h3>
-                <nav class="nav nav-masthead">
-                  <a class="nav-link active" href="users#index">Home</a>
-                  <a class="nav-link" href="toilets#index">Toilets</a>
-                  <a class="nav-link" href="bookings#index">Bookings</a>
-                </nav>
-              </div>
-            </div>
-
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <%= form_tag(users_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-          <%= submit_tag "Search" %>
-          <% end %>
-
-          </a>
-        </div>
-      </div>
-    </nav>
-
+    <%= render "navbar" %>
 
     <form class="form-signin">
       <h2 class="form-signin-heading">Sign in</h2>
@@ -86,11 +51,7 @@
       <button class="btn btn-lg btn-primary btn-block" type="submit">Register now!</button>
     </form>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12"> <%= yield %></div>
-      </div>
-    </div>
-
+       <%= yield %>
+  
 </body>
 </html>
