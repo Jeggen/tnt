@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ h1{
+   color:#000066;
+    font-family: verdana;
+    font-size: 500%;
+ }
+ th{
+   color:black;
+
+    font-size:300%;
+ }
  body{
    background-color:#ddd;
  }
@@ -22,6 +32,10 @@
 nav {
   padding: 0px 100px;
 }
+.navbar-brands{
+  color:red;
+}
+
 
 .picture{
   width: 500px;
