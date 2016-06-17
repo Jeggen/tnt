@@ -1,5 +1,7 @@
 <% if !user_signed_in? %>
 
+
+
 <%= form_for(:user, :url => session_path(:user), class: "form-signin") do |f| %>
   <h2 class="form-signin-heading">Sign in</h2>
   <%= f.text_field :email, class: "form-control", placeholder:"Email address"  %>
@@ -13,7 +15,7 @@
 <% end %>
 
 <%= form_for(:user, :url => registration_path(:user), class:"form-register") do |f| %>
-<h2 class="form-signin-heading">Register</h2>
+<h2 class="form-register-heading">Register</h2>
   <label for="inputName" class="sr-only">Name</label>
   <%= f.text_field :name,  class:"form-control", placeholder:"Name" %>
 
@@ -21,15 +23,16 @@
   <%= f.email_field :email,  class:"form-control", placeholder:"Email address" %>
 
   <label for="inputPassword" class="sr-only">Password</label>
-  <%= f.password_field :password, class:"form-control" %>
+  <%= f.password_field :password, class:"form-control", placeholder:"Password" %>
 
   <label for="inputPassword" class="sr-only">Password Confirmation</label>
-  <%= f.password_field :password_confirmation, class:"form-control"  %>
+  <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Enter password again"  %>
 
-  <%= f.submit "Sign up",  class:"btn btn-lg btn-primary btn-block" %>
+  <%= f.submit "Register now!",  class:"btn btn-lg btn-primary btn-block" %>
 <% end %>
 
 <% else %>
-<p>Welcome!!<p>
+<h2>Welcome to Toilet and Toilet!<h2>
 
+<img src="https://d1hekt5vpuuw9b.cloudfront.net/assets/article/af3121293390429ba3d9aa903e468333_reliefforwizkids_featuredImage.jpg" height="300" weight="500">
 <% end %>
