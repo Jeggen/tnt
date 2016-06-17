@@ -19,6 +19,7 @@
         <td><%= toilet.price %></td>
         <td><%= toilet.cleanliness %></td>
         <td><%= link_to 'Show', toilet %></td>
+        <td><%= link_to 'Visit', visits_path %></td>
 <% if user_signed_in? %>
      <% if toilet.user == current_user %>
         <td><%= link_to 'Edit', edit_toilet_path(toilet) %></td>
