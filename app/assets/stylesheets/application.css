@@ -20,7 +20,6 @@
  }
  th{
    color:black;
-
     font-size:300%;
  }
  body{
@@ -30,11 +29,13 @@
    background-color: #C2DFFF;
    background-repeat: no-repeat;
    background-attachment: fixed;
+   font-family: josefinesans;
  }
 
 .vertical-center {
    margin: 0px 100px;
 }
+
 nav {
   padding: 0px 100px;
 }
@@ -43,9 +44,6 @@ nav {
   background-color:white; color:black;
   padding:20px;
   filter: alpha(opacity=80); opacity: 0.8;
-}
-.navbar-default .navbar-brand{
-  color:red;
 }
 
 img.small-cover {
@@ -71,7 +69,7 @@ div.toilet-item {
 }
 
 .footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     text-align: center ;
     padding: 10px;
@@ -79,5 +77,12 @@ div.toilet-item {
     font-family: verdana ;
     width: 100% ;
     height: 50px ;
-    background-color: #f6f6f6 ;
+    background-color: #2B2B2B ;
+    padding-bottom: 60px;
+}
+
+.gottago {
+  text-align: center;
+  padding-bottom: 20px;
+  color: white;
 }

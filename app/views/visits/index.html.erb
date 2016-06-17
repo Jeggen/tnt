@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div style="background-color:white; color:black; padding:20px; filter: alpha(opacity=80); opacity: 0.8;">
-<h1>Listing Visits</h1>
+<h1>Toilet reviews</h1>
 
 <table class="table table-hover">
   <thead>
@@ -21,10 +21,10 @@
         <td><%= visit.stars %></td>
         <td><%= visit.comment %></td>
         <td><%= link_to 'Show', visit %></td>
-        <td><%= link_to 'Edit', edit_visit_path(visit) %></td>
-        <td><%= link_to 'Destroy', visit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+   <i class="material-icons right">review</i>
+ </button>
   </tbody>
 </table>
 </div>

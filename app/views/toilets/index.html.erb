@@ -19,7 +19,9 @@
         <td><%= toilet.price %></td>
         <td><%= toilet.cleanliness %></td>
         <td><%= link_to 'Show', toilet %></td>
-<% if user_signed_in? %>
+        <td><%= link_to 'Reviews', visits_path %></td>
+
+      <% if user_signed_in? %>
      <% if toilet.user == current_user %>
         <td><%= link_to 'Edit', edit_toilet_path(toilet) %></td>
         <td><%= link_to 'Destroy', toilet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

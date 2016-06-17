@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @new_toilet.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @new_toilet.price %>
+</p>
+
+<p>
+  <strong>Cleanliness:</strong>
+  <%= @new_toilet.cleanliness %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @new_toilet.string %>
+</p>
+
+<%= link_to 'Edit', edit_new_toilet_path(@new_toilet) %> |
+<%= link_to 'Back', new_toilets_path %>

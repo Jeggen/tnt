@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing New Toilets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Cleanliness</th>
+      <th>String</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @new_toilets.each do |new_toilet| %>
+      <tr>
+        <td><%= new_toilet.name %></td>
+        <td><%= new_toilet.price %></td>
+        <td><%= new_toilet.cleanliness %></td>
+        <td><%= new_toilet.string %></td>
+        <td><%= link_to 'Show', new_toilet %></td>
+        <td><%= link_to 'Edit', edit_new_toilet_path(new_toilet) %></td>
+        <td><%= link_to 'Destroy', new_toilet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New New toilet', new_new_toilet_path %>
