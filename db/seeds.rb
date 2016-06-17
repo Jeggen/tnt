@@ -44,13 +44,10 @@ user_toilets["David"] = [
   [ "Dare to sit", 3.92, "http://kulr.images.worldnow.com/images/7993134_G.jpg", "Clean" ],
 ]
 
-users.each do | name, email |
-   User.create( name: name, email: email )
-end
-
 user_toilets.each do | user_name, toilets |
    user = User.find_by( name: user_name )
 
    toilets.each do | name, price, cover, cleanliness |
       Toilet.create( name:name, user_id: user.id, price: price, cover: cover, cleanliness: cleanliness )
    end
+end
