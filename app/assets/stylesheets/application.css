@@ -29,7 +29,7 @@
    background-color: #C2DFFF;
    background-repeat: no-repeat;
    background-attachment: fixed;
-   font-family: Josefinesans;
+   font-family: josefinesans;
  }
 
 .vertical-center {
@@ -78,8 +78,11 @@ div.toilet-item {
     width: 100% ;
     height: 50px ;
     background-color: #2B2B2B ;
+    padding-bottom: 60px;
 }
 
 .gottago {
+  text-align: center;
+  padding-bottom: 20px;
   color: white;
 }

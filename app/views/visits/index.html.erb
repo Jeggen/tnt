@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div style="background-color:white; color:black; padding:20px; filter: alpha(opacity=80); opacity: 0.8;">
-<h1>Listing Visits</h1>
+<h1>Toilet reviews</h1>
 
 <table class="table table-hover">
   <thead>
@@ -22,6 +22,9 @@
         <td><%= visit.comment %></td>
         <td><%= link_to 'Show', visit %></td>
     <% end %>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+   <i class="material-icons right">review</i>
+ </button>
   </tbody>
 </table>
 </div>
