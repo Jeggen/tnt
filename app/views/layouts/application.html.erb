@@ -21,11 +21,17 @@
 <body>
     <%= render "navbar" %>
 
+    <p id="notice"><%= notice %></p>
+
   <div class="vertical-center">
     <div class="container">
       <div class="row">
-        <div class="col-md-6"> <%= yield %></div>
-        <div class="col-md-6"> <%= image_tag("great toilet.jpg", class:"picture") %></div>
+        <div class="col-md-8">
+          <div class="transparant-background">
+
+          <%= yield %>
+          </div>
+        </div>
       </div>
     </div>
 </div>

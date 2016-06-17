@@ -57,14 +57,14 @@ toilet_visits = [
 ]
 
 users.each do | name, email |
-   User.create( name: name, email: email )
+   User.create( name: name, email: email , password: 'abcd1234')
 end
 
 user_toilets.each do | user_name, toilets |
    user = User.find_by( name: user_name )
 
    toilets.each do | name, price, cover, cleanliness |
-      Toilet.create( name:name, user_id: user.id, price: price, cover: cover, cleanliness: cleanliness )
+      Toilet.create( name:name, user: user, price: price, cover: cover, cleanliness: cleanliness )
    end
 end
 

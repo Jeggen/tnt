@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
   get 'home/index'
 
   root 'home#index'
@@ -6,7 +8,11 @@ Rails.application.routes.draw do
   resources :users
   resources :toilets
   resources :visits
+
+  get 'user_toilets/:user_id' => 'toilets#user', as: :user_toilets
 end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
