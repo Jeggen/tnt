@@ -20,7 +20,6 @@
  }
  th{
    color:black;
-
     font-size:300%;
  }
  body{
@@ -30,6 +29,7 @@
    background-color: #C2DFFF;
    background-repeat: no-repeat;
    background-attachment: fixed;
+   font-family: Josefinesans;
  }
 
 .vertical-center {
