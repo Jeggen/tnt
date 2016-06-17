@@ -53,7 +53,7 @@ user_toilets["David"] = [
 
 toilet_visits = [
   ["Paddy", "Dont touch anything", 2, "It smelled bad" ],
-  ["Jane", "Glass seat", 4, "Fanstastic" ]
+  ["Jane", "Glass seat", 4, "Fantastic" ]
 ]
 
 users.each do | name, email |
