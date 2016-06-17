@@ -13,9 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ h1{
+   color:#000066;
+    font-family: verdana;
+    font-size: 500%;
+ }
+ th{
+   color:black;
 
-
- body {
+    font-size:300%;
+ }
+ body{
    background-image: url("https://boldquestions.files.wordpress.com/2016/01/street-toilet.jpg");
    background-size: cover;
    background-position: center;
@@ -26,9 +34,18 @@
 
 .vertical-center {
    margin: 0px 100px;
- }
+}
 nav {
   padding: 0px 100px;
+}
+
+.transparant-background {
+  background-color:white; color:black;
+  padding:20px;
+  filter: alpha(opacity=80); opacity: 0.8;
+}
+.navbar-default .navbar-brand{
+  color:red;
 }
 
 img.small-cover {

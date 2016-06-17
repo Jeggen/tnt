@@ -28,6 +28,7 @@ class ToiletsController < ApplicationController
   # POST /toilets.json
   def create
     @toilet = Toilet.new(toilet_params)
+    @toilet.user = current_user
 
     respond_to do |format|
       if @toilet.save
@@ -63,6 +64,11 @@ class ToiletsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def user
+    @user = User.find( params[:user_id] )
+    @toilets = Toilet.where( user: @user )
+ end
 
   private
     # Use callbacks to share common setup or constraints between actions.

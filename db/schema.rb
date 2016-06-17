@@ -11,39 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615201252) do
+ActiveRecord::Schema.define(version: 20160615194220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bookings", force: :cascade do |t|
-    t.integer  "toilet_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "bookings", ["toilet_id"], name: "index_bookings_on_toilet_id", using: :btree
-  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
-
   create_table "toilets", force: :cascade do |t|
-    t.string   "location"
+    t.integer  "user_id"
+    t.string   "name"
+    t.decimal  "price"
+    t.string   "cover"
     t.string   "cleanliness"
-    t.string   "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "name"
-    t.integer  "user_id"
-    t.string   "cover"
   end
+
+  add_index "toilets", ["user_id"], name: "index_toilets_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.string   "email"
-    t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "visits", force: :cascade do |t|
     t.integer  "user_id"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160615201252) do
   add_index "visits", ["toilet_id"], name: "index_visits_on_toilet_id", using: :btree
   add_index "visits", ["user_id"], name: "index_visits_on_user_id", using: :btree
 
+  add_foreign_key "toilets", "users"
   add_foreign_key "visits", "toilets"
   add_foreign_key "visits", "users"
 end

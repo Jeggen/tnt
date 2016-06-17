@@ -1,29 +1,35 @@
-<form class="form-signin">
-      <h2 class="form-signin-heading">Sign in</h2>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
+<% if !user_signed_in? %>
 
-  <form class="form-register">
-      <h2 class="form-signin-heading">Register</h2>
-      <label for="inputName" class="sr-only">Name</label>
-      <input type="name" id="inputName" class="form-control" placeholder="User name" required autofocus>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Register now!</button>
-    </form>
+<%= form_for(:user, :url => session_path(:user), class: "form-signin") do |f| %>
+  <h2 class="form-signin-heading">Sign in</h2>
+  <%= f.text_field :email, class: "form-control", placeholder:"Email address"  %>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+  <label>
+  <%= f.check_box :remember_me %> Remember me
+  </label>
+  <%= f.submit 'Sign in', class: "btn btn-lg btn-primary btn-block" %>
+  <%= link_to "Forgot your password?", new_password_path(:user) %>
+<% end %>
+
+<%= form_for(:user, :url => registration_path(:user), class:"form-register") do |f| %>
+<h2 class="form-signin-heading">Register</h2>
+  <label for="inputName" class="sr-only">Name</label>
+  <%= f.text_field :name,  class:"form-control", placeholder:"Name" %>
+
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <%= f.email_field :email,  class:"form-control", placeholder:"Email address" %>
+
+  <label for="inputPassword" class="sr-only">Password</label>
+  <%= f.password_field :password, class:"form-control" %>
+
+  <label for="inputPassword" class="sr-only">Password Confirmation</label>
+  <%= f.password_field :password_confirmation, class:"form-control"  %>
+
+  <%= f.submit "Sign up",  class:"btn btn-lg btn-primary btn-block" %>
+<% end %>
+
+<% else %>
+<p>Welcome!!<p>
+
+<% end %>

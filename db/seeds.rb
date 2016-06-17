@@ -1,3 +1,10 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
 users =[
   [ "Santa", "santa@hotmail.com"],
   [ "Jane", "janeB@gmail.net"],
@@ -44,10 +51,25 @@ user_toilets["David"] = [
   [ "Dare to sit", 3.92, "http://kulr.images.worldnow.com/images/7993134_G.jpg", "Clean" ],
 ]
 
+toilet_visits = [
+  ["Paddy", "Dont touch anything", 2, "It smelled bad" ],
+  ["Jane", "Glass seat", 4, "Fanstastic" ]
+]
+
+users.each do | name, email |
+   User.create( name: name, email: email , password: 'abcd1234')
+end
+
 user_toilets.each do | user_name, toilets |
    user = User.find_by( name: user_name )
 
    toilets.each do | name, price, cover, cleanliness |
-      Toilet.create( name:name, user_id: user.id, price: price, cover: cover, cleanliness: cleanliness )
+      Toilet.create( name:name, user: user, price: price, cover: cover, cleanliness: cleanliness )
    end
+end
+
+toilet_visits.each do | user_name, toilet_name, stars, comment |
+   user = User.find_by( name: user_name )
+   toilet = Toilet.find_by( name: toilet_name )
+   Visit.create( toilet_id: toilet.id, user_id: user.id, stars: stars, comment: comment )
 end

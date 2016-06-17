@@ -21,7 +21,19 @@
 <body>
     <%= render "navbar" %>
 
-       <%= yield %>
+    <p id="notice"><%= notice %></p>
 
+  <div class="vertical-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="transparant-background">
+
+          <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
 </body>
 </html>
