@@ -1,4 +1,5 @@
 class Toilet < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
   belongs_to :user
   has_many :visits
   has_many :bookings

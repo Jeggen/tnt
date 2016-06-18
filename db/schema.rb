@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617130254) do
+ActiveRecord::Schema.define(version: 20160617174935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string   "user_email"
+    t.string   "date"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "new_toilets", force: :cascade do |t|
     t.string   "name"
@@ -34,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160617130254) do
     t.string   "cleanliness"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "image"
   end
 
   add_index "toilets", ["user_id"], name: "index_toilets_on_user_id", using: :btree

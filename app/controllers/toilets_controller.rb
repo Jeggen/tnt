@@ -9,6 +9,9 @@ class ToiletsController < ApplicationController
     @toilets = Toilet.search(params[:search])
   end
 
+  def toilet_params
+      params.require(:toilet).permit(:name, :price, :cleanliness, :image)
+  end
 
   # GET /toilets/1
   # GET /toilets/1.json

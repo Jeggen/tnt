@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Toilets</h1>
+<h1>Available Toilets</h1>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -20,6 +20,7 @@
         <td><%= toilet.cleanliness %></td>
         <td><%= link_to 'Show', toilet %></td>
         <td><%= link_to 'Reviews', visits_path %></td>
+        <td><b><%= link_to 'Book', bookings_path %></b></td>
 
       <% if user_signed_in? %>
      <% if toilet.user == current_user %>

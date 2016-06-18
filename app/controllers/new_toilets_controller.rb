@@ -5,6 +5,7 @@ class NewToiletsController < ApplicationController
   # GET /new_toilets.json
   def index
     @new_toilets = NewToilet.all
+    authorize! :read, @toilets
   end
 
   # GET /new_toilets/1
@@ -25,6 +26,7 @@ class NewToiletsController < ApplicationController
   # POST /new_toilets.json
   def create
     @new_toilet = NewToilet.new(new_toilet_params)
+    authorize! :create, @toilet
 
     respond_to do |format|
       if @new_toilet.save
@@ -36,6 +38,15 @@ class NewToiletsController < ApplicationController
       end
     end
   end
+
+  def user
+     @user = User.find( params[:user_id] )
+     authorize! :read, @user
+
+     @toilets = Toilet.where( user: @user ).order( created_at: :desc )
+     authorize! :read, @toilets
+  end
+
 
   # PATCH/PUT /new_toilets/1
   # PATCH/PUT /new_toilets/1.json

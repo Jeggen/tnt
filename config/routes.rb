@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :bookings
   resources :new_toilets
   devise_for :users, :controllers => { registrations: 'registrations' }
   get 'home/index'

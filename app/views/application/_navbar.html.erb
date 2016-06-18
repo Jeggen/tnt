@@ -15,7 +15,8 @@
     <ul class="nav navbar-nav">
       <li><%= link_to "Users", users_path %></li>
       <li><%= link_to "Toilets", toilets_path %></li>
-        <li><%= link_to "Visits", visits_path %></li>
+      <li><%= link_to "Visits", visits_path %></li>
+      <li><%= link_to "Bookings", bookings_path %></li>
     </ul>
     <div class="col-sm-3 col-md-3">
       <%= form_tag(users_path, :method => "get", id: "search-form",
